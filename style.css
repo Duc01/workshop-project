@@ -8,24 +8,34 @@ body {
 
 nav {
 	display: flex;
-	justify-content: right;
-	width: 80vw;
+	justify-content: space-between;
+	width: 60vw;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 0.8rem;
 	gap: 1.5rem;
 }
 
-nav button {
+.headings {
+	font-size: 2rem;
+	font-weight: bold;
+	align-self: center;
+	color: #7c3bed;
+}
+
+button {
 	background: none;
-	border: none;
+	border: 1px solid #3333334e;
+	padding: 0.4rem 0.4rem;
+	border-radius: 8px;
 	font-size: 1rem;
 	cursor: pointer;
-	transition: color 0.2s;
+	transition: 0.2s;
 }
 
 nav button:hover {
-	color: #00b4d8;
+	background: #7c3bed;
+	color: white;
 }
 
 .container {
@@ -55,7 +65,7 @@ h2 {
 	gap: 1rem;
 }
 
-button.primary {
+/* button.primary {
 	background-color: #0077b6;
 	border: none;
 	color: white;
@@ -66,7 +76,7 @@ button.primary {
 
 button.primary:hover {
 	background-color: #023e8a;
-}
+} */
 
 ul {
 	list-style: none;
