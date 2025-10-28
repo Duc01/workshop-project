@@ -8,9 +8,10 @@ body {
 
 nav {
 	display: flex;
-	justify-content: center;
-	background-color: #222;
-	color: white;
+	justify-content: right;
+	width: 80vw;
+	margin-left: auto;
+	margin-right: auto;
 	padding: 0.8rem;
 	gap: 1.5rem;
 }
@@ -18,7 +19,6 @@ nav {
 nav button {
 	background: none;
 	border: none;
-	color: white;
 	font-size: 1rem;
 	cursor: pointer;
 	transition: color 0.2s;
@@ -80,6 +80,23 @@ li {
 	margin-top: 0.5rem;
 	display: flex;
 	justify-content: space-between;
+}
+
+.task-left {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.completed {
+	text-decoration: line-through;
+	opacity: 0.7;
+}
+
+.will-remove {
+	opacity: 0;
+	transform: translateX(12px);
+	transition: opacity 250ms ease, transform 250ms ease;
 }
 
 input[type='text'] {
