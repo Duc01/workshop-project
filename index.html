@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Study Tracker</title>
+	<link href="style.css" rel="stylesheet">
+	<script src="app.js" defer></script>
+</head>
+
+<body>
+
+	<nav>
+		<button id="navTracker">Study Tracker</button>
+		<button id="navTodo">To-Do List</button>
+	</nav>
+
+	<div class="container" id="trackerPage">
+		<h2>Study Tracker</h2>
+		<div class="time-display" id="timer">00:00:00</div>
+		<div class="buttons">
+			<button class="primary" id="startBtn">Start</button>
+			<button class="primary" id="stopBtn">Stop</button>
+			<button class="primary" id="resetBtn">Reset</button>
+		</div>
+		<h3>Study Logs</h3>
+		<ul id="studyLogs"></ul>
+	</div>
+
+	<div class="container hidden" id="todoPage">
+		<h2>To-Do List</h2>
+		<div style="display:flex; gap:0.5rem; justify-content:center;">
+			<input type="text" id="taskInput" placeholder="Enter a task">
+			<button id="addTask">Add</button>
+		</div>
+		<ul id="taskList"></ul>
+	</div>
+
+</body>
+
+</html>
