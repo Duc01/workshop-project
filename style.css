@@ -47,14 +47,30 @@ nav button:hover {
 	padding: 2rem;
 }
 
-h2 {
-	text-align: center;
-	margin-bottom: 1rem;
+.container h2 {
+	align-items: left;
+	color: #00000065;
+	font-weight: normal;
+	font-size: 1.5rem;
+}
+
+.container button {
+	margin: 0 0.5rem;
+	background: none;
+	border: 1px solid #3333334e;
+	/* make container buttons ~25% bigger than base buttons */
+	padding: 0.5rem 0.5rem;
+	font-size: 1.25rem;
+}
+.container button:hover {
+	background: #7c3bed;
+	color: white;
 }
 
 /* Study Tracker */
 .time-display {
-	font-size: 2rem;
+	font-size: 4rem;
+	font-weight: bold;
 	text-align: center;
 	margin: 1rem 0;
 }
@@ -148,7 +164,9 @@ input[type='text'] {
 	background-color: #0077b6;
 	color: white;
 	border: none;
-	padding: 0.5rem 1rem;
+	/* scaled up ~25% to match container buttons */
+	padding: 0.625rem 1.25rem;
+	font-size: 1.25rem;
 	border-radius: 8px;
 	cursor: pointer;
 }
