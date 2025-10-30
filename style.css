@@ -2,6 +2,7 @@ body {
 	background: linear-gradient(rgb(29, 29, 29), rgb(66, 68, 68));
 	background-size: cover;
 	text-align: center;
+	font-family: Ubuntu;
 }
 nav {
 	max-width: 50vh;
