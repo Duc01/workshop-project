@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Syllabus Tracker</title>
+  <link rel="stylesheet" href="syllabus.css">
+</head>
+<body>
+  <main class="container">
+    <header class="page-header">
+      <h1>Syllabus Tracker</h1>
+      <p class="subtitle">Track chapters, deadlines and progress</p>
+    </header>
+
+    <section class="add-section">
+      <input id="topic" type="text" placeholder="New topic or chapter">
+      <input id="due" type="date">
+      <button id="add">Add</button>
+    </section>
+
+    <section id="list" class="list">
+      <!-- Items will be appended here -->
+    </section>
+
+    <footer class="note">Tip: Click a card to mark complete — hover to reveal actions.</footer>
+  </main>
+
+  <script>
+    // Minimal JS so the page is interactive without extra files
+    const addBtn = document.getElementById('add');
+    const topicInput = document.getElementById('topic');
+    const dueInput = document.getElementById('due');
+    const list = document.getElementById('list');
+
+    function createCard(title, due){
+      const card = document.createElement('article');
+      card.className = 'card enter';
+      card.innerHTML = `
+        <div class="card-main">
+          <div class="title">${title}</div>
+          <div class="due">Due: ${due || '—'}</div>
+        </div>
+        <div class="card-actions">
+          <button class="complete">Complete</button>
+          <button class="remove">Remove</button>
+        </div>
+      `;
+
+      // Toggle complete
+      card.querySelector('.complete').addEventListener('click', () => {
+        card.classList.toggle('done');
+      });
+
+      // Remove
+      card.querySelector('.remove').addEventListener('click', () => {
+        card.classList.add('leave');
+        card.addEventListener('animationend', () => card.remove());
+      });
+
+      // Click card to toggle done as well
+      card.querySelector('.card-main').addEventListener('click', () => {
+        card.classList.toggle('done');
+      });
+
+      return card;
+    }
+
+    addBtn.addEventListener('click', () => {
+      const title = topicInput.value.trim();
+      const due = dueInput.value;
+      if(!title) return;
+      const card = createCard(title, due);
+      list.prepend(card);
+      topicInput.value = '';
+      dueInput.value = '';
+    });
+
+    // Add a few examples
+    ['Introduction','Chapter 1','Chapter 2'].forEach((t,i) => {
+      const d = new Date();
+      d.setDate(d.getDate() + (i+3));
+      list.appendChild(createCard(t, d.toISOString().slice(0,10)));
+    });
+  </script>
+</body>
+</html>
